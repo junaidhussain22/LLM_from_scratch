@@ -1,45 +1,54 @@
-**Project: Building a Language Model from Scratch**
+# Building a Language Model from Scratch
 
-1. **Dependencies Setup**
-   - Installs PyTorch and tiktoken for tokenization
-   - Uses urllib to download "the-verdict.txt" text corpus
+## 📝 Project Overview
 
-2. **Data Preparation**
-   - Implements custom GPTDatasetV1 class for text processing:
-     - Sliding window approach for input-target pairs
-     - Stride-based sequence generation
-   - Creates DataLoader with configurable batch size, sequence length, and stride
+This project demonstrates how to build the foundational components of a modern language model (LLM) from scratch, following GPT-style architecture principles. The pipeline covers everything from raw text processing and tokenization to embedding layer implementation and batch data preparation, using PyTorch and tiktoken.
 
-3. **Embedding Implementation**
-   - Token embeddings using PyTorch's nn.Embedding
-   - Absolute positional embeddings (GPT-style)
-   - Combined token + positional embeddings
-   - Experiments with embedding dimensions and context lengths
+The goal is to provide an educational, hands-on implementation of the core elements behind large language models, focusing on text preprocessing, tokenization, and embedding mechanics.
 
-4. **Core Components**
-   - Byte Pair Encoding (BPE) tokenizer via tiktoken
-   - Text preprocessing and sequence generation
-   - Embedding visualization and shape verification
+---
 
-5. **Key Concepts Covered**
-   - Tokenization and subword units
-   - Sliding window input-target generation
-   - Embedding layer mechanics
-   - Positional encoding strategies
-   - Batch processing with DataLoader
+## 🚀 Key Features
 
-6. **Experimental Features**
-   - Multiple dataloader configurations tested
-   - Different sequence lengths and strides explored
-   - Embedding dimension experiments (output_dim=256)
+- **Custom Dataset Preparation:**  
+  Implements a sliding window approach for generating input-target pairs from raw text, with configurable sequence length and stride.
+- **Tokenization:**  
+  Utilizes Byte Pair Encoding (BPE) via [tiktoken](https://github.com/openai/tiktoken) for efficient subword tokenization.
+- **Embedding Layers:**  
+  - Token embeddings using PyTorch’s `nn.Embedding`
+  - Absolute positional embeddings (GPT-style)
+  - Combined token + positional embeddings
+- **Batch Processing:**  
+  Efficient batch generation using PyTorch’s `DataLoader` and a custom `GPTDatasetV1` class.
+- **Experimental Flexibility:**  
+  Easily adjust batch size, sequence length, stride, and embedding dimensions for experimentation.
+- **Visualization & Verification:**  
+  Embedding shape checks and visualizations to ensure correct implementation.
 
-7. **Training Setup**
-   - Loss function implementation
-   - Training loop structure (not fully shown but implied)
-   - Vocabulary size handling (vocab_size=50257)
+---
 
-**Dependencies:** Python, PyTorch, tiktoken  
-**Dataset:** Text from "the-verdict.txt"  
-**Goal:** Educational implementation of core LLM components from scratch, focusing on understanding embedding layers and text preprocessing for language modeling.
+## 📚 Key Concepts Covered
 
-This demonstrates a complete pipeline from raw text processing to embedding layer implementation, following GPT-style architecture principles.
+- Tokenization and subword units (BPE)
+- Sliding window input-target generation
+- Embedding layer mechanics and positional encoding
+- Batch processing with DataLoader
+- Experimental setup for context length and embedding dimension
+
+---
+
+## 📁 Dataset
+
+- **Source:**  
+  [the-verdict.txt](#) (downloaded via `urllib`)
+- **Description:**  
+  Raw text corpus used for training and experimentation.
+
+---
+
+## 🛠️ Dependencies
+
+- **Python 3.x**
+- **PyTorch**
+- **tiktoken**
+- **urllib** (for data download)
